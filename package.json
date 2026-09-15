@@ -1,0 +1,8 @@
+{
+  "name": "interview-coach",
+  "version": "1.0.0",
+  "description": "High-rigor interview coaching for job seekers — PM, Engineering, Design, Data Science, Research, Marketing, and Operations",
+  "pi": {
+    "skills": ["./skills"]
+  }
+}
