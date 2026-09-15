@@ -1,0 +1,11 @@
+{
+  "name": "interview-coach",
+  "description": "High-rigor interview coaching for job seekers — PM, Engineering, Design, Data Science, Research, Marketing, and Operations",
+  "version": "1.0.0",
+  "author": {
+    "name": "daysleeper23",
+    "email": "luu@softpix.io"
+  },
+  "repository": "https://github.com/daysleeper23/interview-coach-plugin",
+  "license": "MIT"
+}
