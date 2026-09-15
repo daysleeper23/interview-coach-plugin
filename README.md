@@ -381,10 +381,24 @@ Choose during `kickoff`. You can switch later.
 
 ```text
 interview-coach-plugin/
-├── SKILL.md                            # Core plugin skill (automatically loaded)
 ├── README.md                           # This file
 ├── LICENSE                             # MIT License
+├── package.json                        # Plugin metadata
 ├── coaching_state.md                   # Created on first kickoff (persistent memory, auto-saved)
+├── skills/                             # Multi-skill command structure
+│   ├── coach/
+│   │   └── SKILL.md                    # Orchestrator skill (entry point — automatically loaded)
+│   ├── kickoff/
+│   │   └── SKILL.md
+│   ├── analyze/
+│   │   └── SKILL.md
+│   ├── practice/
+│   │   └── SKILL.md
+│   ├── mock/
+│   │   └── SKILL.md
+│   ├── prep/
+│   │   └── SKILL.md
+│   └── ... (20 more command skills)
 └── references/
     ├── commands/                       # Per-command workflows (loaded on demand)
     │   ├── kickoff.md
