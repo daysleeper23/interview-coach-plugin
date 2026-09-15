@@ -10,7 +10,7 @@ Convert the interview-coach repo from a "rename SKILL.md to CLAUDE.md" distribut
 The plugin exposes two entry points:
 
 - **`interview-coach:coach`** — full orchestrator for users who want guided coaching. Reads state, detects intent, routes to the right command.
-- **`interview-coach:[command]`** — 24 individual command skills for users who know exactly what they want (e.g. `interview-coach:analyze`, `interview-coach:kickoff`).
+- **`interview-coach:[command]`** — 25 individual command skills for users who know exactly what they want (e.g. `interview-coach:analyze`, `interview-coach:kickoff`).
 
 ## Target Install UX
 
@@ -55,7 +55,7 @@ interview-coach-plugin/
 │   │   └── SKILL.md                      ← NEW (thin, ~20 lines)
 │   ├── practice/
 │   │   └── SKILL.md                      ← NEW (thin, ~20 lines)
-│   └── ... (21 more command skills)      ← NEW (thin, ~20 lines each)
+│   └── ... (22 more command skills)      ← NEW (thin, ~20 lines each)
 ├── references/
 │   ├── base.md                           ← NEW (extracted from root SKILL.md)
 │   ├── commands/ (24 files)              ← unchanged
@@ -67,7 +67,7 @@ interview-coach-plugin/
 
 **Dropped:** `releases/` directory — redundant with git tags.
 
-**Note:** `references/` stays at the plugin root (not inside `skills/`) so the `pi.skills` scanner doesn't pick it up as a skill.
+**Note:** `references/commands/` has 25 files (not 24 — `help` is a command too). `references/` stays at the plugin root (not inside `skills/`) so the `pi.skills` scanner doesn't pick it up as a skill.
 
 ## package.json
 
