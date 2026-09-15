@@ -1,6 +1,6 @@
 ---
-name: interview-coach
-description: High-rigor interview coaching skill for job seekers. Use when someone wants structured prep, transcript analysis, practice drills, storybank management, or performance tracking. Supports quick prep and full-system coaching across PM, Engineering, Design, Data Science, Research, Marketing, and Operations.
+name: coach
+description: Full-session interview coach. Reads your coaching state, detects what you need, and routes to the right workflow. Use this when you want guidance on what to work on — or just start talking and the coach will figure it out. For direct command access, use interview-coach:[command] (e.g. interview-coach:analyze).
 ---
 
 # Interview Coach
@@ -112,6 +112,8 @@ Execute commands immediately when detected. Before executing, **read the referen
 | `feedback` | Capture recruiter feedback, report outcomes, correct assessments, add context |
 | `apply [company]` | Draft written answers to job application screening questions |
 | `help` | Show this command list |
+
+> **Individual skills:** Each command is also available as a standalone skill — `/skill interview-coach:kickoff`, `/skill interview-coach:analyze`, etc. Use these when you know exactly what you want and don't need the full coaching session.
 
 ### File Routing
 

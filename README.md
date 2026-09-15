@@ -54,53 +54,28 @@ Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
 ---
 
-## Quick Start
-
-### Option 1: Claude Code (recommended)
-
-1. Clone the repo:
+## Installation
 
 ```bash
-git clone https://github.com/noamseg/interview-coach-skill.git
-cd interview-coach-skill
+/plugin install https://github.com/daysleeper23/interview-coach-plugin
 ```
 
-Or [download it as a ZIP](https://github.com/noamseg/interview-coach-skill/archive/refs/heads/main.zip) and unzip.
-
-2. Activate the coach by renaming the skill file:
+## Usage
 
 ```bash
-mv SKILL.md CLAUDE.md
+# Full guided coaching session (recommended for most users)
+/skill interview-coach:coach
+
+# Jump directly to a specific command
+/skill interview-coach:kickoff    # new candidate setup
+/skill interview-coach:analyze    # score a transcript
+/skill interview-coach:practice   # drill sessions
+/skill interview-coach:mock       # full mock interview
+/skill interview-coach:prep       # company prep brief
+# ... and 20 more commands
 ```
 
-3. Open the folder in Claude Code and say `kickoff`.
-
-Requires any paid Claude plan. Also works with Claude Code (terminal), Cursor, or any environment with file system access.
-
-### Option 2: OpenAI Codex
-
-1. Clone the repo:
-
-```bash
-git clone https://github.com/noamseg/interview-coach-skill.git
-cd interview-coach-skill
-```
-
-Or [download it as a ZIP](https://github.com/noamseg/interview-coach-skill/archive/refs/heads/main.zip) and unzip.
-
-2. Activate the coach by renaming the skill file:
-
-```bash
-mv SKILL.md AGENTS.md
-```
-
-3. Open the folder in Codex and say `kickoff`.
-
-Requires any paid ChatGPT plan.
-
----
-
-For both options, the coach will ask for your resume, target role, and timeline — then build your profile, assess your starting point, and give you a prioritized action plan. Everything saves automatically to `coaching_state.md` so you pick up where you left off next session.
+Use `coach` when you want guidance on what to work on. Use individual skills when you know exactly what you need.
 
 ---
 
@@ -405,11 +380,25 @@ Choose during `kickoff`. You can switch later.
 ## Repository Structure
 
 ```text
-interview-coach-skill/
-├── SKILL.md                            # Core skill — rename to CLAUDE.md to activate
+interview-coach-plugin/
 ├── README.md                           # This file
 ├── LICENSE                             # MIT License
+├── package.json                        # Plugin metadata
 ├── coaching_state.md                   # Created on first kickoff (persistent memory, auto-saved)
+├── skills/                             # Multi-skill command structure
+│   ├── coach/
+│   │   └── SKILL.md                    # Orchestrator skill (entry point — automatically loaded)
+│   ├── kickoff/
+│   │   └── SKILL.md
+│   ├── analyze/
+│   │   └── SKILL.md
+│   ├── practice/
+│   │   └── SKILL.md
+│   ├── mock/
+│   │   └── SKILL.md
+│   ├── prep/
+│   │   └── SKILL.md
+│   └── ... (20 more command skills)
 └── references/
     ├── commands/                       # Per-command workflows (loaded on demand)
     │   ├── kickoff.md
